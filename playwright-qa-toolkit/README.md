@@ -27,7 +27,9 @@ playwright-qa-toolkit/
 
 ## 4. Local registration
 
-Add this to your VS Code user settings (Windows). Replace the path with the actual absolute path of this folder.
+**Workspace users:** no setup needed. This repo ships `.vscode/settings.json` (VS Code) and `.github/copilot/settings.json` (Copilot CLI, marketplace `qa-mart-lab`) that enable the plugin automatically once the repo is cloned and the workspace is opened.
+
+Otherwise, add this to your VS Code user settings (Windows). Replace the path with the actual absolute path of this folder.
 
 ```json
 {
