@@ -19,10 +19,16 @@ In Copilot Chat, add the marketplace and install the plugin:
 
 ```text
 /plugin marketplace add jigneshHM/playwright-toolkit-plugin
-/plugin install jc-qa-toolkit@qa-mart-lab
+/plugin install jc-qa-toolkit@jc-qa-marketplace
 ```
 
 The repository also recommends this plugin through `.github/copilot/settings.json`. Review and trust the marketplace when prompted. The plugin configures its own MCP servers and hooks; no workspace-specific MCP or hook files are required.
+
+### Team recommendations
+
+Publish the updated `.claude-plugin/marketplace.json` to `jigneshHM/playwright-toolkit-plugin` before sharing the new install command. The marketplace is named `jc-qa-marketplace` to avoid conflicting with the team's existing `qa-mart-lab` marketplace.
+
+Merge the updated `.github/copilot/settings.json` into the team repository, preserving its existing marketplace and plugin recommendations. Teammates must pull that change, enable `chat.plugins.enabled` in a VS Code version that supports agent plugins, and send a message in Copilot Chat. Then search the Extensions view for `@agentPlugins @recommended` and install `jc-qa-toolkit`, accepting the marketplace trust prompt after review.
 
 ## Prerequisites
 

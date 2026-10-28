@@ -3,11 +3,19 @@
     "qa-mart-lab": {
       "source": {
         "source": "github",
+        "repo": "happiestmindslabsu2/qa-mart-lab"
+      }
+    },
+    "jc-qa-marketplace": {
+      "source": {
+        "source": "github",
         "repo": "jigneshHM/playwright-toolkit-plugin"
       }
     }
   },
   "enabledPlugins": {
-    "jc-qa-toolkit@qa-mart-lab": true
+    "playwright-qa-toolkit@qa-mart-lab": true,
+    "qamart-testing-plugin@qa-mart-lab": true,
+    "jc-qa-toolkit@jc-qa-marketplace": true
   }
 }
