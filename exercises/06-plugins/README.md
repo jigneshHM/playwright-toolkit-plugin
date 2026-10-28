@@ -1,6 +1,6 @@
 # 6. Plugins and MCP
 
-A plugin packages customizations so a team installs them together. It can carry skills, custom agents, hooks and MCP servers. Instructions and prompt files are not plugin components.
+A plugin packages related customizations so a teammate can install them together. Agent Plugins 1.0 makes skills and MCP servers portable; VS Code also supports Copilot-specific rules, slash commands, custom agents and hooks inside the plugin.
 
 ## Plugin layout (Agent Plugins 1.0)
 ```
@@ -8,10 +8,12 @@ my-plugin/
   plugin.json                       # name, version, description, $schema
   skills/<name>/SKILL.md            # portable
   mcp.json                          # portable: { "mcpServers": { ... } }
+  scripts/                          # hook and helper scripts
   com.github.copilot/
     agents/<name>.agent.md          # Copilot-specific
+    commands/<name>.prompt.md       # Copilot slash commands
+    rules/<name>.instructions.md    # Copilot instructions
     hooks/hooks.json                # Copilot-specific
-  scripts/                          # hook and helper scripts
 ```
 Use `${PLUGIN_ROOT}` in hook commands and MCP args to point at files inside the plugin. Do not write logs into the plugin folder.
 
@@ -54,6 +56,21 @@ As a tester, I want Copilot to call QA Mart and read test results as tools, so t
 - The server never prints anything except protocol messages on stdout (logs go to stderr).
 
 **Safety**: plugin MCP servers run code on your machine and start without a trust prompt. Read a plugin before enabling it.
+
+## Capstone: make the kit installable by teammates
+
+Bundle the workflow into one plugin folder instead of requiring teammates to copy individual customizations into their workspace. Aim for at least two of each:
+
+- instruction files in `com.github.copilot/rules/`
+- slash-command prompt files in `com.github.copilot/commands/`
+- skills in `skills/`
+- custom agents in `com.github.copilot/agents/`
+- MCP servers in the root `mcp.json`
+- hooks in `com.github.copilot/hooks/hooks.json`, with their scripts under the plugin
+
+Include a README with install instructions and a short demo. Test the plugin from a clean setup, not only from the source workspace. Keep only one active copy of each customization so workspace and plugin hooks do not fire twice. The app under test must still be reachable; document how to start it or configure its URL.
+
+**Done when** a teammate can install the plugin from the marketplace or its Git repository, see its supported customizations and MCP tools, and complete one real QA Mart testing workflow without manually copying files into `.github/` or `.vscode/`.
 
 ## Check yourself
 | Symptom | Likely cause |

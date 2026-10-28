@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "jc-qa-toolkit",
+  "version": "1.2.0",
+  "description": "QA Mart testing toolkit: failure analysis and coupon boundary skills, test reviewer and explorer agents, safety and lint hooks, and Playwright + QA Mart MCP servers.",
+  "keywords": ["playwright", "testing", "qa", "mcp"],
+  "license": "MIT"
+}

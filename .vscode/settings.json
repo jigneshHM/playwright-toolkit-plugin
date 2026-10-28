@@ -1,6 +1,6 @@
 {
   "chat.plugins.enabled": true,
   "chat.pluginLocations": {
-    "${workspaceFolder}/playwright-qa-toolkit": true
+    "${workspaceFolder}/jc-qa-toolkit": true
   }
 }

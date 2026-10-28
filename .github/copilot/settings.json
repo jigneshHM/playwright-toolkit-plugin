@@ -8,6 +8,6 @@
     }
   },
   "enabledPlugins": {
-    "playwright-qa-toolkit@qa-mart-lab": true
+    "jc-qa-toolkit@qa-mart-lab": true
   }
 }

@@ -4,7 +4,7 @@ const path = require('node:path');
 const readline = require('node:readline');
 
 const root = path.resolve(__dirname, '..');
-const serverPath = path.resolve(root, process.argv[2] || 'solutions/plugin/qamart-qa-toolkit/mcp/qamart-server.cjs');
+const serverPath = path.resolve(root, process.argv[2] || 'jc-qa-toolkit/mcp/qamart-server.cjs');
 const PORT = process.env.SMOKE_PORT || '3199';
 const EXPECTED = ['qamart_health', 'qamart_list_products', 'qamart_validate_coupon', 'qamart_place_order', 'qamart_list_orders', 'qamart_reset', 'tests_last_run_summary', 'tests_list_failures', 'tests_find_flaky'];
 
